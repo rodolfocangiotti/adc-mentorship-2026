@@ -64,11 +64,6 @@ jobs:
       run: |
         echo "build-output-dir=${{ github.workspace }}/juce_cmake_api_prototype/build" >> "$GITHUB_OUTPUT"
 
-    # - name: Get dependencies
-    #   shell: bash
-    #   run: |
-    #     git submodule init
-
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
@@ -88,3 +83,9 @@ jobs:
     #   # Execute tests defined by the CMake configuration. Note that --build-config is needed because the default Windows generator is a multi-config generator (Visual Studio generator).
     #   # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
     #   run: ctest --build-config ${{ matrix.build_type }}
+
+    - name: Test on macOS
+      if: ${{ matrix.os == 'macos_latest'}}
+      shell: bash
+      run: |
+        ${{ steps.strings.outputs.build-output-dir }}/GuiAppExample_artefacts/GUI App\ Example.app/Contents/MacOS/GUI\ App\ Example --run-tests
