@@ -1,3 +1,3 @@
-[submodule "JUCE"]
-	path = JUCE
+[submodule "juce_cmake_api_prototype/JUCE"]
+	path = juce_cmake_api_prototype/JUCE
 	url = https://github.com/juce-framework/JUCE/
