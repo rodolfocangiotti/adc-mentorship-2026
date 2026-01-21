@@ -85,7 +85,7 @@ jobs:
     #   run: ctest --build-config ${{ matrix.build_type }}
 
     - name: Test on macOS
-      if: ${{ matrix.os == 'macos_latest'}}
+      if: ${{ matrix.os == 'macos-latest'}}
       shell: bash
       run: |
         ${{ steps.strings.outputs.build-output-dir }}/GuiAppExample_artefacts/GUI App\ Example.app/Contents/MacOS/GUI\ App\ Example --run-tests
