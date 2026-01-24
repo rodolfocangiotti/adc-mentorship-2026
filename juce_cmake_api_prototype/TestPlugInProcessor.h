@@ -23,7 +23,7 @@ public:
 
         beginTest ("Dummy Test");
         {
-            expect (false);     // Should fail...
+            expect (true);     // Should pass...
         }
         DBG("Dummy test finished...");
     }
