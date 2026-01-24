@@ -88,4 +88,4 @@ jobs:
       if: ${{ matrix.os == 'macos-latest'}}
       shell: bash
       run: |
-        ${{ steps.strings.outputs.build-output-dir }}/GuiAppExample_artefacts/GUI\ App\ Example.app/Contents/MacOS/GUI\ App\ Example --run-tests
+        ${{ steps.strings.outputs.build-output-dir }}/GuiAppExample_artefacts/Release/GUI\ App\ Example.app/Contents/MacOS/GUI\ App\ Example --run-tests
